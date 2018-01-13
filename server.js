@@ -111,7 +111,7 @@ models.sequelize.sync().then(function() {
  
 });
 //setup express app
-var PORT = process.env.PORT || 3306;
+var PORT = process.env.NODE_ENV || 'production';
 
 
 
