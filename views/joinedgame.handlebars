@@ -57,12 +57,13 @@
 
     <div class="panel panel-default ">
     <div class="panel-heading player-panel-heading">
-    <h4>Players</h4>    
+    <h4>Current Players</h4>    
     </div>
     <div class="panel-body" >
       <ul>
+                  {{#if userplaying}}
+
         {{#each Users}}
-          {{#if userplaying}}
 
        <li class="row display-games players-joined"> 
         <div class="col-lg-6  player">
@@ -74,8 +75,10 @@
         <button class="join-button" type="submit" name="user_id" value={{id}} >VIEW PROFILE</button></form>              
        </li>
 
-               {{/if}}
         {{/each}}
+
+                       {{/if}}
+
 
 
       </ul>
