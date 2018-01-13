@@ -3,9 +3,8 @@ var exports = module.exports = {}
 var models = require("../models");
  
 exports.signup = function(req, res) {
- 
     res.render('signup');
- 
+
 }
 exports.signin = function(req, res) {
  

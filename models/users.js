@@ -26,6 +26,10 @@ module.exports = function(sequelize, DataTypes){
 			type: DataTypes.STRING,
 			isEmail: true,
 			allowNull: false
+		}, 
+		profImgUrl: {
+			type: DataTypes.STRING,
+			allowNull: true
 		}
 	});
 
