@@ -44,12 +44,12 @@ module.exports = function(app, passport) {
 		 
 		));
 
-	  app.get('/viewgames',isLoggedIn, authController.viewgames);
+	  app.get('/profilepage',isLoggedIn, authController.profilepage);
 
 	    app.get('/logout',authController.logout);
 
 	    app.post('/signin', passport.authenticate('local-signin', {
-		        successRedirect: '/viewgames',
+		        successRedirect: '/profilepage',
 		 
 		        failureRedirect: '/signin',
 

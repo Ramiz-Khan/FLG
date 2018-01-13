@@ -1,3 +1,6 @@
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
+
 <nav id="mainNav" class="navbar navbar-default">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/dashboard">Monkey Around</a>
+      <a class="navbar-brand" href="/dashboard"><img src="./assets/img/Go_Ball_logo.png" width="90px" class="gb-logo"></a>
 
     </div>
 
@@ -19,7 +22,7 @@
           <a href="dashboard">Home</a>
         </li>
         <li>
-          <a href="#">Profile</a>
+          <a href="/profilepage">Profile</a>
         </li>
         <li>
           <a href="/logout">Logout</a>
@@ -32,21 +35,42 @@
 </nav>
 
 <div class="container form-cont">
-   <form id="signup" name="creategame" method="post" action="/creategame">
+   <form id="signup" name="creategame" method="post" action="/creategame" >
         <label for="sport">Sport</label>
         <input class="text" name="sport" type="text" />
         <label for="creator">Your Name</label>
         <input name="creator" type="text" />
-        <label for="city">City Name</label>
-        <input name="city" type="text" />
-        <label for="description">Game Description</label>
-        <input name="description" type="text" />
+        <label for="location" >Location</label>
+        <input name="location" id="location" type="text" size="50">
+        <label for="day">Day</label>
+        <input name="day" type="date" required/>
+        <label for="time">Start Time</label>
+        <input name="time" type="time" />
         <label for="currentplayers">Current Ammount of Players</label>
         <input name="currentplayers" type="text" />
         <label for="totalplayers">Total Players for Game</label>
         <input name="totalplayers" type="text" />
+        <label for="description">Game Description</label>
+        <input name="description" type="text" />
         <button class="btn" type="submit" value={{id}} name="game_id"> Create Game</button>
     </form>
 
+
+
 </div>
 
+
+
+  {{!-- <script>
+function initialize() {
+
+		var input = $(document).getElementById("location");
+		var autocomplete = new google.maps.places.Autocomplete(input);
+}
+		$(document).ready(function () {
+		google.maps.event.addDomListener(window, "load", initialize);
+			
+      })
+
+      initialize();
+</script> --}}

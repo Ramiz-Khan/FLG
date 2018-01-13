@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes){
-    var Player_stats = sequelize.define("Player_stats", {
+    var Stats = sequelize.define("Stats", {
         id: {
 			type: DataTypes.UUID,
 			primaryKey: true,
@@ -26,12 +26,13 @@ module.exports = function(sequelize, DataTypes){
         }
     });
 
-    Player_stats.associate = function(models) {
+    Stats.associate = function(models) {
 
-        Player_stats.belongsTo(models.Games);
-        Player_stats.belongsTo(models.User);
+        Stats.belongsTo(models.Games);
+        Stats.belongsTo(models.User);
+        Stats.hasMany(models.Results);
 
     };
 
-    return Player_stats;
+    return Stats;
 }

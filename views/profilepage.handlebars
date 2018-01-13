@@ -1,0 +1,73 @@
+<nav id="mainNav" class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/dashboard"><img src="./assets/img/Go_Ball_logo.png" width="90px" class="gb-logo"></a>
+
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/dashboard">Home</a>
+        </li>
+        <li>
+          <a href="/profile">Profile</a>
+        </li>
+        <li>
+          <a href="/logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+
+<div class="container" id="db-cont">
+
+  <div class="panel panel-default">
+    <div class="panel-heading profile-header">
+      <h2>Your Profile</h2> 
+  <div class="row">
+        <div class="col-lg-3">
+
+          <img src="">
+          {{firstname}}
+
+          {{lastname}}
+      
+      </div>
+    <div class="col-lg-9">
+
+      <a href="/creategame"><button class="newgame-button">Create New Game</button></a><hr/>
+    </div>
+    </div>
+    </div>
+    <div class="panel-body">
+      <ul>
+
+          <div class="row">
+            <li class="display-games players-joined">
+
+                
+                Name: {{firstname}}  {{lastname}} <br/>
+                Email: {{email}} <br/>
+                Member Since: {{createdAt}} <br/>
+                Bio: {{bio}} <br/>
+
+                <form action="/joinedgame" class="join-form" method="get">  <input type="hidden" name="user_id" value={{user_id}}>
+                <button class="join-button" type="submit" name="game_id" value={{id}} >Join Game</button></form>
+            </li>
+        </div>
+
+      </ul>
+    </div>
+  </div>

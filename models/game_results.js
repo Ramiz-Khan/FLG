@@ -34,11 +34,8 @@ module.exports = function(sequelize, DataTypes){
 
 
 Results.associate = function(models) {
-    Results.hasMany(models.Player_stats, {
-        onDelete: "cascade"
-    });
+
     Results.belongsTo(models.Games);
-    Results.belongsTo(models.User);
 
 };
 

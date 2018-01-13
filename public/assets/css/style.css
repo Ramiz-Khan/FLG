@@ -3,7 +3,7 @@
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
-    padding: 15px 0;
+    padding: 0px 0;
 
 
     /* Add additional styles here for the UNCOLLAPSED state */
@@ -15,21 +15,187 @@
 }
 
 body {
-	background-image: url(.././img/bRjpgfp.jpg);
-	background-repeat: no-repeat;
-    background-size: 100%;
+	background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/noisy_net.png");
+}
+
+h1,h2,a,p,hr {
+	color: #232435;
+	font-family: Helvetica, sans-serif;
+
+}
+
+.navbar-right {
+	margin-top: 5px;
+}
+
+a.navbar-right:hover {
+	margin-top: 5px;
+	color: #26a69a;
 }
 
 header{
   position: center;
   color: white;
   font-size: 2em;
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/wormz.png");
+}
+
+iframe {
+	background: white;
+	border: transparent;
+	border-radius: 10px;
+	margin-top: 5px;
+}
+
+.gb-logo {
+	margin-top: 0px;
+	margin-bottom: 5px;
 }
 
 .form-cont {
+
 	background: white;
+	border: #fff solid 2px;
+	border-radius: 3px;
 	padding: 20px;
 	margin-top: 50px;
+	box-shadow: -3px 3px 8px #fff;
+}
+
+.display-games {
+	display: block;
+	background: #f4f4f4;
+	border-radius: 3px;
+	margin: 10px;
+	padding: 5px;
+	color: #232435;
+	font-family: Helvetica, sans-serif;
+	font-size: 20px; 
+	overflow: none;
+}
+
+
+.display-games:hover {
+	width: 100%;
+	display: block;
+	background: #ffffff;
+	border-left: #26a69a 5px solid;
+	border-radius: 3px;
+	margin: 10px;
+	padding: 5px;
+	color: #232435;
+	font-family: Helvetica, sans-serif;
+	font-size: 20px; 
+	overflow: none;
+}
+
+
+.newgame-button {
+	background: #26a69a;
+	color: #fff;
+	border: transparent;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+
+.join-button {
+	background: #232435;
+	color: #f3f3f3;
+	border: #f3f3f3 solid 1px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	padding-right: 30px;
+	display: inline;	
+	float: right;
+
+}
+
+.join-form {
+	display: inline;
+}
+
+.join-button:hover {
+	background: #26a69a;
+	border: transparent;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 30px;
+	padding-right: 30px;
+	display: inline;	
+	float: right;
+
+}
+
+.panel-heading {
+	background: #f3f3f3;
+	color: #232435;
+	border: transparent;
+	border-radius: 5px;
+}
+
+.panel {
+	background: transparent;
+	border: none;
+
+}
+
+div.panel-heading.player-panel-heading {
+	background: transparent;
+	border: #26a69a solid 5px;
+	border-radius: 5px;
+	color: #f3f3f3;
+	line-height: 20px;
+
+}
+
+.panel-heading {
+	background: #26a69a;
+	border-radius: 5px;
+	text-align: center;
+}
+
+
+li.players-joined {
+	display: block;
+	background: #f3f3f3;
+	border-left: #1DA1F2 solid 5px;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	vertical-align: center;
+	color: #232435;
+	font-family: Helvetica, sans-serif;
+	font-size: 20px; 
+	min-height: 25px;
+	line-height: 25px;
+
+}
+
+li.players-joined:hover {
+	display: block;
+	background: #232435;
+	border-left: #1DA1F2 solid 5px;
+	border-right: #f3f3f3 solid 3px;
+	border-top: #f3f3f3 solid 3px;
+	border-bottom: #f3f3f3 solid 3px;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 5px;
+	color: #f3f3f3;
+	font-family: Helvetica, sans-serif;
+	font-size: 20px; 
+	line-height: 25px;
+
 }
 
 @keyframes  slider{
@@ -60,6 +226,12 @@ header{
 	100%{
 		left: -400%
 	}
+}
+
+#game-desc {
+	border-left: #26a69a 5px solid;
+	background: #fafafa;
+	border-radius: 5px;
 }
 
 #slider{

@@ -54,11 +54,31 @@ app.post("/creategame", function(req,res){
         })
     })
 
+app.post("/profilepage", function(req,res){
+
+    req.body.user_id = req.user.id;
+ 
+	models.User.findOne({where: {id: req.body.user_id}}).done(function(Users) {
+		console.log(Users);
+	    res.render("profilepage", Users);   
+        
+        })
+    })
+
 app.post("/joinedgame", function(req,res){
-    req.body.game_id = req.param('game_id');
+
+    // req.body.game_id = req.params.game_id;
     req.body.user_id = req.user.id;
 
-    models.Player_stats.create(req.body).done(function(dbPost){
+    models.Stats.create(req.body
+
+        // user_id: req.query.user,
+        // game_id: req.query.game_id
+
+    ).done(function(Stats){
+
+        console.log(Stats);
+        res.render("joinedgame");
 
     })
 })

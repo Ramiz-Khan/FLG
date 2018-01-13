@@ -18,13 +18,18 @@ module.exports = function(sequelize, DataTypes){
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		city: {
+		location: {
 			allowNull: false,
 			type: DataTypes.STRING
 		},
-		description: {
-			allowNull: false,
-			type: DataTypes.STRING
+		day: {
+			allowNull: true,
+			type: DataTypes.DATEONLY
+		},
+		time: {
+			allowNull: true,
+			type: DataTypes.TIME,
+
 		},
 		totalplayers: {
 			type: DataTypes.INTEGER,
@@ -42,18 +47,18 @@ module.exports = function(sequelize, DataTypes){
 			type: DataTypes.BOOLEAN,
 			defaultValue: true
 
+		},
+		description: {
+			allowNull: true,
+			type: DataTypes.STRING
 		}
 
 	});
 
 	Games.associate = function(models){
-		Games.belongsTo(models.User, {
-			onDelete: "cascade"
-		});
-		Games.hasMany(models.Results, {
-			onDelete: "cascade"
-		});
-		Games.hasMany(models.Player_stats, {
+		Games.belongsTo(models.User);
+		Games.hasOne(models.Results);
+		Games.hasMany(models.Stats, {
 			onDelete: "cascade"
 		});
 	}

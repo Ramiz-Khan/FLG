@@ -34,7 +34,7 @@ exports.dashboard = function(req, res) {
 
 		}).then(function(Users) {
 			
-			models.Player_stats.findAll({
+			models.Stats.findAll({
 
 			}).then(function(Stats) {
 
@@ -61,18 +61,29 @@ exports.dashboard = function(req, res) {
  
 // }
 
-exports.viewgames = function(req, res) {
-	res.render("viewgames");
+exports.profilepage = function(req, res) {
+	var name = req.param('name');
+
+	models.User.findOne({where: {firstname: name}}).then(function(Users) {
+		var Users = Users
+		console.log(Users);
+	res.render("profilepage", Users.dataValues);
+
+})
 }
 
 exports.creategame = function(req, res) {
-	res.render("creategame");
+	var user_id = req.param('user');
+	
+	models.User.findAll({where: {id: user_id}}).then(function(Users) {
+	res.render("creategame", Users);
+})
 }
 
 exports.joinedgame = function(req, res) {
 	
 	var id = req.param('game_id');
-	var user_id = req.param('user');
+	var user_id = req.param('user_id');
 
 	models.Games.findAll({
 
@@ -80,13 +91,39 @@ exports.joinedgame = function(req, res) {
 
 	}).then(function(Game){
 		
-		models.User.findAll({
+		models.Stats.findAll({
 
-		}).then(function(Users) {
+			// where: {game_id:id}
+
+		}).then(function(Stats) {
 			
-			models.Player_stats.findAll({
+			models.User.findAll({
+				
+				
 
-			}).then(function(Stats) {
+			}).then(function(Users) {
+
+				// for (var i = 0; i < Stats.length; i++) {
+				// 	if (Stats[i].user_id == user_id && Stats[i].game_id == id){
+				// 		Stats[i].usergame = true;
+				// 	}
+				// 	else{
+				// 		Game[i].usergame = false;
+				// 	}
+				
+				// }
+
+				for (var i = 0; i < Users.length; i++) {
+					if (Users[i].id == req.user.id){
+						Users[i].userplaying = true;
+					}
+					else{
+						Users[i].userplaying = false;
+					}
+				}
+
+
+
 
 				var	data = {
 					Games: Game,
@@ -94,7 +131,8 @@ exports.joinedgame = function(req, res) {
 					Stats: Stats
 					}
 
-	console.log(data)
+	console.log(data);
+	console.log(Stats);
 	res.render("joinedgame", data);
 			})
 		})
