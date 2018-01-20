@@ -111,13 +111,13 @@ models.sequelize.sync().then(function() {
  
 });
 //setup express app
-var PORT = process.env.PORT || 3306;
+var NODE_ENV = process.env.NODE_ENV || 3306;
 
 
 
 //sync sequelize then start express
 models.sequelize.sync().then(function() {    
-    app.listen(PORT, function () {
-        console.log("🌎  You're listening on port: " + PORT);
+    app.listen(NODE_ENV, function () {
+        console.log("🌎  You're listening on port: " + NODE_ENV);
     });
 });
