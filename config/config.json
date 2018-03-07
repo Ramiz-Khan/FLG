@@ -17,7 +17,7 @@
     "use_env_variable":"JAWSDB_URL",
     "JAWSDB_URL": "mysql://szextaac2cbomsrr:ybu0muotbjwhm4mw@ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/k1opwkx9tz45h07z",
     "username": "root",
-    "password": null,
+    "password": "ybu0muotbjwhm4mw",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
