@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, '/public/')));
 
 //routes - to be replaced by requiring route files
 app.get("/", function (req, res) {
-    res.render("index");
+    res.sendFile(path.join(__dirname, '/public', 'index.html'));
 });
 
 app.get("/home", function (req, res) {
