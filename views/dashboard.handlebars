@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/dashboard"><img src="./assets/img/Go_Ball_logo.png" width="90px" class="gb-logo"></a>
+      <a class="navbar-brand" href="/"><img src="./assets/img/Go_Ball_logo.png" width="90px" class="gb-logo"></a>
 
     </div>
 
@@ -16,10 +16,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="/dashboard">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
-          <a href="/profilepage">Profile</a>
+          <a href="/profilepage?name={{firstname}}&user_id={{id}}" >Profile</a>
         </li>
         <li>
           <a href="/logout">Logout</a>
@@ -31,61 +31,113 @@
   <!-- /.container -->
 </nav>
 
-<div class="container" id="db-cont">
+<div class="container-fluid center" id="db-cont">
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4><strong>Your Games</strong></h4> 
-      <a href="/creategame"><button class="newgame-button">Create New Game</button></a>
+    <div class="row">
+
+      <div class="col-lg-12 newgame-btn center">
+      
+          <a href="/creategame"><button class="newgame-button">Create New Game</button></a>
+      
+      </div>
+    
     </div>
-    <div class="panel-body">
-      <ul>
-        {{#each Games}}
-          {{#if usergame}}
 
-       <li class="row display-games players-joined"> 
-        <div class="col-lg-6  player">
-                What: {{sport}} <br/>
-                Where: {{location}} <br/>
-                Description: {{description}}             
-                </div>              
-            <div class="col-lg-6 player">
+    <div class="row">
+        <div class="col-lg-6">
 
-                <form action="/joinedgame" class="join-form" method="get">  <input type="hidden" name="user_id" value={{user_id}}>
-                <button class="join-button" type="submit" value={{id}} name="game_id">Join Game</button></form>
-                
-            </div>
-            </li>
-          {{/if}}
-        {{/each}}
-      </ul>
-    </div>
-  </div>
+          <div class="panel-heading menu-header">
 
-    <div class="panel panel-default">
-      <div class="panel-heading"><h5><strong>Games Around You</strong></h5></div>
-      <div class="panel-body">
-        <ul>
-          {{#each Games}}
-            {{#unless usergame}}
-       <li class="row display-games players-joined"> 
-        <div class="col-lg-6  player">
-                
-                What: {{sport}} 
-                Time: {{time}}
-                Where: {{location}} 
-                Description: {{description}}
-                </div>
+            <h4><strong>Your Games</strong></h4> 
+          
+          </div>
+        <div class="panel-body col-lg-12">
+
+          <ul>
+
+            {{#each Games}}
+            {{#if usergame}}
+
+              <li class="row display-games players-joined"> 
+
                 <div class="col-lg-6 player">
 
-                <form action="/joinedgame" method="get" class="join-form">  <input type="hidden" name="user_id" value={{user_id}}>
-                <button class="join-button" type="submit" value={{id}} name="game_id">Join Game</button></form>
-                </div>              
-                </li>
-            {{/unless}}
-          {{/each}}
-        </ul>
-      </div>
+                        What: {{sport}} <br>
+                        Where: {{location}} <br>
+                        Time: {{time}}<br>
+                        Description: {{description}}          
+
+                </div>
+
+                <div class="col-lg-6 player">
+
+                      <form action="/joinedgame" class="join-form" method="get">  <input type="hidden" name="user_id" value={{user_id}}>
+                      
+                        <button class="join-button" type="submit" value={{id}} name="game_id">Join Game</button>
+                      
+                      </form>
+                        
+                </div>
+
+              </li>
+
+            {{/if}}
+            {{/each}}
+
+          </ul>
+
+        </div>
+
+
+        </div> 
+        <div class="col-lg-6">
+          <div class="panel-heading menu-header">
+
+            <h4><strong>Games Around You</strong></h4>
+          </div>
+          <div class="panel-body col-lg-12">
+
+            <ul>
+              
+              {{#each Games}}
+              {{#unless usergame}}
+
+          <li class="row display-games players-joined">
+
+            <div class="col-lg-6  player">
+                    
+                    What: {{sport}} <br>
+                    Time: {{time}} <br>
+                    Where: {{location}} <br>
+                    Description: {{description}}
+            
+            </div>
+
+            <div class="col-lg-6 player">
+
+                    <form action="/joinedgame" method="get" class="join-form">  <input type="hidden" name="user_id" value={{user_id}}>
+            
+                    <button class="join-button" type="submit" value={{id}} name="game_id">Join Game</button></form>
+            
+            </div>  
+                       
+          </li>
+
+                {{/unless}}
+                {{/each}}
+            
+            </ul>
+
+          </div>
+        
+        
+        </div>
     </div>
-</div>
+
+  
+
+
+
+    </div>
+  </div>
 

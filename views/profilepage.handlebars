@@ -32,30 +32,55 @@
 </nav>
 
 <div class="container" id="db-cont">
-
+<div class="row">
+  <div class="col-lg-12">
   <div class="panel panel-default">
     <div class="panel-heading profile-header">
-      <h2>Your Profile</h2> 
-  <div class="row">
+        <div class="row">
+      <h2>{{firstname}}  {{lastname}}</h2> 
+        </div>
+
+        <div class="row">
         <div class="col-lg-3">
 
-          <img src={{profImgUrl}} height="100px">
-          {{firstname}}
+          <img class="profImg" src="{{prof_img_url}}" height="200px">
+</div>
+    <div class="col-lg-9">      
 
-          {{lastname}}
-      
+      <div class="row">
+    <div class="col-lg-9 player-info">
+
+      <a href="/creategame"><button class="prof-game-button">Create New Game</button></a>
+      <a href="#"><button class="prof-edit-button" style="background-color: #232435; margin-left: 10px;">Edit Profile</button></a>
+      <a href="/dashboard"><button class="prof-db-button" style="background-color: #1e90ff; margin-left: 10px;">Go to Dashboard</button></a>
+
+    </div>
+    </div>
+      <div class="row">
+
+            <div class=" col-lg-9 player-info">
+               <strong> Email:</strong> {{email}} <br/>
+               <strong> Member Since:</strong> {{createdAt}} <br/>
+                <strong>Bio:</strong> {{bio}} <br/>
+                </div>
+
       </div>
-    <div class="col-lg-9">
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
-      <a href="/creategame"><button class="newgame-button">Create New Game</button></a><hr/>
-    </div>
-    </div>
-    </div>
+
+
+      <div class="row">
+        <div class="col-lg-12">
     <div class="panel-body">
+
       <ul>
 
-          <div class="">
-            <li class=" row display-games players-joined">
+            <li class="display-games players-joined">
 
                 
                 Name: {{firstname}}  {{lastname}} <br/>
@@ -64,10 +89,12 @@
                 Bio: {{bio}} <br/>
 
                 <form action="/joinedgame" class="join-form" method="get">  <input type="hidden" name="user_id" value={{user_id}}>
-                <button class="join-button" type="submit" name="game_id" value={{id}} >Join Game</button></form>
+                <button class="join-button" type="submit" name="game_id" value={{id}} >Send Message</button></form>
             </li>
-        </div>
 
       </ul>
+
+                </div>
+      </div>
     </div>
   </div>

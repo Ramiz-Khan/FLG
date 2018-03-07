@@ -28,7 +28,7 @@ exports.dashboard = function(req, res) {
 			else{
 				Game[i].usergame = false;
 			}
-		}
+		};
 
 		models.User.findAll({
 
@@ -43,7 +43,7 @@ exports.dashboard = function(req, res) {
 					Users: Users,
 					Stats: Stats
 					}
-	console.log(data)
+	console.log(data.Users)
 	res.render("dashboard", data);
 			})
 		})
@@ -64,10 +64,11 @@ exports.dashboard = function(req, res) {
 exports.profilepage = function(req, res) {
 	var name = req.param('name');
 
+
 	models.User.findOne({where: {firstname: name}}).then(function(Users) {
-		var Users = Users
-		console.log(Users);
-	res.render("profilepage", Users.dataValues);
+		var data = {Users : Users}
+		console.log(data.Users);
+	res.render("profilepage", data.Users.dataValues);
 
 })
 }

@@ -31,48 +31,70 @@
   <!-- /.container -->
 </nav>
 
-<div class="container">
-
+<div class="container-fluid center">
+          
+  <div class="row">
+    <div class="col-lg-6">
   <div class="panel panel-default">
 
-    <div class="panel-body" id="game-desc">
+        <div class="panel-body" id="game-desc">
+            <ul>
+              {{#each Games}}
+                {{#if userplaying}}
 
-      <ul>
-        {{#each Games}}
-          {{#if userplaying}}
+                    <li >
+                      <h2>{{sport}}</h2> 
+                      <h3>{{location}} </h3><br/>
+                      {{description}} 
+                    </li>        
+                {{/if}}
 
-              <li >
-                <h2>{{sport}}</h2> 
-                <h3>{{location}} </h3><br/>
-                {{description}} 
-              </li>        
-          {{/if}}
+              {{/each}}
 
-        {{/each}}
+            </ul>
+        
+            <div id="map"></div>
+          </div>          
+          </div>
+        </div>
 
-      </ul>
 
-      </div>
-      </div>
+    <div class="col-lg-6">
+      <div class="player-chat">
+      <iframe src="https://flg-chat.herokuapp.com" width="100%">
+      </iframe>
+    </div>
+    </div>
+    </div>
 
-    <div class="panel panel-default ">
+
+<div class="row">
+  <div class="col-lg-12">
     <div class="panel-heading player-panel-heading">
     <h4>Current Players</h4>    
     </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-lg-12">
     <div class="panel-body" >
       <ul>
         {{#unless userplaying}}
 
         {{#each Users}}
 
-       <li class="row display-games players-joined"> 
+       <li class="display-games players-joined"> 
+
         <div class="col-lg-6  player">
               
           <strong>{{firstname}}</strong>
 
         </div>
+
         <form action="/profilepage" method="get" class="join-form "> <input type="hidden" name="name" value={{firstname}}>
-        <button class="join-button" type="submit" name="user_id" value={{id}} >VIEW PROFILE</button></form>              
+        <button class="join-button" type="submit" name="user_id" value={{id}} >VIEW PROFILE</button></form>      
+
        </li>
 
         {{/each}}
@@ -83,9 +105,8 @@
 
       </ul>
  </div>
-    
-    <div class="col-lg-12">
-      <iframe src="https://flg-chat.herokuapp.com" width="100%"></iframe>
-    </div>
-    </div>
-  </div>
+</div>
+</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
+</script>
