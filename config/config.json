@@ -15,7 +15,7 @@
   },
   "production": {
     "use_env_variable":"JAWSDB_URL",
-    "JAWSDB_URL": "mysql://szextaac2cbomsrr:vrhj5acii81s3pyr@ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/k1opwkx9tz45h07z",
+    "JAWSDB_URL": "mysql://szextaac2cbomsrr:ybu0muotbjwhm4mw@ko86t9azcob3a2f9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/k1opwkx9tz45h07z",
     "username": "root",
     "password": null,
     "database": "database_production",
