@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes){
 			allowNull: false
 		}, 
 		prof_img_url: {
-			type: DataTypes.STRING,
+			type: DataTypes.TEXT,
 			allowNull: true
 		}
 	});
