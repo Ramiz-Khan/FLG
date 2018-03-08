@@ -30,7 +30,7 @@ app.get("/", function (req, res) {
     res.render("index");
 });
 
-app.get("/", function (req, res) {
+app.get("/home", function (req, res) {
     res.sendFile(path.join(__dirname, '/public', 'index.html'));
 });
 
