@@ -30,6 +30,10 @@ module.exports = function(sequelize, DataTypes){
 		img: {
 			type: DataTypes.TEXT,
 			allowNull: true
+		},
+		createdAt: {
+			type: DataTypes.NOW,
+			allowNull: false			
 		}
 	});
 
