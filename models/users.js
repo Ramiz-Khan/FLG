@@ -27,7 +27,7 @@ module.exports = function(sequelize, DataTypes){
 			isEmail: true,
 			allowNull: false
 		}, 
-		prof_img_url: {
+		img: {
 			type: DataTypes.TEXT,
 			allowNull: true
 		}
