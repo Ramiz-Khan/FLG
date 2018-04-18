@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, '/public/')));
 
 //routes - to be replaced by requiring route files
 app.get("/", function (req, res) {
-    res.render("index");
+    res.redirect("index");
 });
 
 app.get("/home", function (req, res) {
@@ -111,7 +111,7 @@ models.sequelize.sync().then(function() {
  
 });
 //setup express app
-var NODE_ENV = process.env.PORT || 'production';
+var NODE_ENV = process.env.PORT || "production";
 
 
 
